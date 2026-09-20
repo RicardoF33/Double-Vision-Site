@@ -1,0 +1,79 @@
+backend:
+  name: github
+  repo: RicardoF33/Double-Vision-Site
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "hero"
+    label: "Hero Section"
+    files:
+      - file: "content/hero.json"
+        label: "Hero Content"
+        name: "hero"
+        fields:
+          - {label: "Tagline", name: "tagline", widget: "string"}
+          - {label: "Subtext", name: "subtext", widget: "text"}
+
+  - name: "packages"
+    label: "Monthly Packages"
+    files:
+      - file: "content/packages.json"
+        label: "Packages"
+        name: "packages"
+        fields:
+          - label: "Packages"
+            name: "packages"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Price", name: "price", widget: "string"}
+              - {label: "Videography", name: "videography", widget: "string"}
+              - {label: "Photography", name: "photography", widget: "string"}
+              - {label: "Shoot Days", name: "shootDays", widget: "string"}
+              - {label: "Content Call", name: "contentCall", widget: "string"}
+              - {label: "Revisions", name: "revisions", widget: "string"}
+
+  - name: "oneoff"
+    label: "One-Off Services"
+    files:
+      - file: "content/oneoff.json"
+        label: "Services"
+        name: "oneoff"
+        fields:
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Note", name: "note", widget: "string"}
+              - {label: "Price", name: "price", widget: "string"}
+
+  - name: "portfolio"
+    label: "Portfolio"
+    files:
+      - file: "content/portfolio.json"
+        label: "Videos"
+        name: "portfolio"
+        fields:
+          - label: "Videos"
+            name: "videos"
+            widget: "list"
+            fields:
+              - {label: "YouTube Video ID", name: "youtubeId", widget: "string", hint: "The code after /shorts/ or /watch?v= in the video's URL"}
+              - {label: "Category Label", name: "category", widget: "string"}
+
+  - name: "contact"
+    label: "Contact Info"
+    files:
+      - file: "content/contact.json"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Instagram Handle (no @)", name: "instagram", widget: "string"}
+          - {label: "Google Form URL", name: "formUrl", widget: "string"}
+          - {label: "Based In", name: "basedIn", widget: "string"}
+          - {label: "Coverage", name: "coverage", widget: "string"}
