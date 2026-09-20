@@ -1,16 +1,31 @@
 {
   "videos": [
     {
-      "youtubeId": "Fp0Wln8JrJo",
-      "category": "Restaurant Promo"
-    },
-    {
       "youtubeId": "Mwh1tDE2ETc",
       "category": "FPV Promo"
     },
     {
       "youtubeId": "bpLa2tmPOck",
       "category": "Fighter Promo"
+    },
+    {
+      "youtubeId": "Fp0Wln8JrJo",
+      "category": "Restaurant Promo"
+    },
+    {
+      "videoFile": "/images/Bunker Fitness low storage.mp4",
+      "posterImage": "/images/img_2774.png",
+      "category": "Gym Promo"
+    },
+    {
+      "videoFile": "/images/Hyrox low storage.mp4",
+      "posterImage": "/images/img_2776.png",
+      "category": "Hyrox Promo"
+    },
+    {
+      "videoFile": "/images/Metrix low storage.mp4",
+      "posterImage": "/images/img_2773.png",
+      "category": "Metrix Competition Promo"
     }
   ]
 }
