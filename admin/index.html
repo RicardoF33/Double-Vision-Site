@@ -7,5 +7,121 @@
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    var PREVIEW_CSS = `
+      body { background:#000; margin:0; }
+      .dv-preview { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; background:#000; color:#C9CDD6; padding:24px; min-height:100vh; box-sizing:border-box; }
+      .dv-h1 { font-family: Georgia, serif; font-weight:700; color:#4DC0FB; font-size:28px; margin:0 0 8px; }
+      .dv-sub { color:#9AA0AC; font-size:15px; margin:0; }
+      .pkg-grid { display:flex; flex-direction:column; gap:12px; margin-top:16px; }
+      .pkg-card { border:1px solid #1E2430; border-radius:6px; background:#0B0D12; padding:18px; }
+      .pkg-name { color:#fff; font-size:16px; font-weight:600; }
+      .pkg-price { color:#4DC0FB; font-size:24px; font-weight:700; margin-top:8px; }
+      .pkg-price span { color:#9AA0AC; font-size:12px; font-weight:400; }
+      .pkg-list { list-style:none; padding:0; margin:12px 0 0; border-top:1px solid #2C3547; }
+      .pkg-list li { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #2C3547; font-size:13px; }
+      .pkg-list li b { color:#C9CDD6; font-weight:500; }
+      .pkg-list li span { color:#9AA0AC; }
+      .oneoff-row { display:flex; justify-content:space-between; gap:12px; padding:12px 0; border-bottom:1px solid #1E2430; }
+      .oneoff-row .name { color:#fff; font-weight:500; display:block; }
+      .oneoff-row .note { color:#9AA0AC; font-size:12px; display:block; margin-top:2px; }
+      .oneoff-row .price { color:#4DC0FB; font-weight:600; white-space:nowrap; }
+      .port-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:16px; }
+      .port-item { position:relative; aspect-ratio:4/5; background:#0B0D12; border-radius:3px; overflow:hidden; border:1px solid #1E2430; }
+      .port-item img { width:100%; height:100%; object-fit:cover; display:block; }
+      .port-item .cat { position:absolute; left:8px; bottom:8px; color:#fff; font-size:12px; font-weight:500; background:rgba(0,0,0,.55); padding:2px 6px; border-radius:3px; }
+      .contact-meta { list-style:none; padding:0; margin:16px 0 0; }
+      .contact-meta li { display:flex; justify-content:space-between; padding:8px 0; border-top:1px solid #1E2430; font-size:13px; }
+      .contact-meta li span:first-child { color:#9AA0AC; }
+      .contact-meta li span:last-child { color:#C9CDD6; }
+    `;
+    CMS.registerPreviewStyle(PREVIEW_CSS, { raw: true });
+
+    var HeroPreview = createClass({
+      render: function() {
+        var e = this.props.entry.get('data');
+        return h('div', {className: 'dv-preview'},
+          h('div', {className: 'dv-h1'}, e.get('tagline')),
+          h('p', {className: 'dv-sub'}, e.get('subtext'))
+        );
+      }
+    });
+    CMS.registerPreviewTemplate('hero', HeroPreview);
+
+    var PackagesPreview = createClass({
+      render: function() {
+        var pkgs = this.props.entry.getIn(['data', 'packages']) || [];
+        return h('div', {className: 'dv-preview'},
+          h('div', {className: 'pkg-grid'},
+            pkgs.map(function(p, i) {
+              return h('div', {className: 'pkg-card', key: i},
+                h('div', {className: 'pkg-name'}, p.get('name')),
+                h('div', {className: 'pkg-price'}, p.get('price'), h('span', null, ' /month')),
+                h('ul', {className: 'pkg-list'},
+                  h('li', null, h('b', null, 'Videography'), h('span', null, p.get('videography'))),
+                  h('li', null, h('b', null, 'Photography'), h('span', null, p.get('photography'))),
+                  h('li', null, h('b', null, 'Shoot days'), h('span', null, p.get('shootDays'))),
+                  h('li', null, h('b', null, 'Content call'), h('span', null, p.get('contentCall'))),
+                  h('li', null, h('b', null, 'Revisions'), h('span', null, p.get('revisions')))
+                )
+              );
+            }).toArray()
+          )
+        );
+      }
+    });
+    CMS.registerPreviewTemplate('packages', PackagesPreview);
+
+    var OneoffPreview = createClass({
+      render: function() {
+        var services = this.props.entry.getIn(['data', 'services']) || [];
+        return h('div', {className: 'dv-preview'},
+          services.map(function(s, i) {
+            return h('div', {className: 'oneoff-row', key: i},
+              h('div', null,
+                h('span', {className: 'name'}, s.get('name')),
+                h('span', {className: 'note'}, s.get('note'))
+              ),
+              h('div', {className: 'price'}, s.get('price'))
+            );
+          }).toArray()
+        );
+      }
+    });
+    CMS.registerPreviewTemplate('oneoff', OneoffPreview);
+
+    var PortfolioPreview = createClass({
+      render: function() {
+        var videos = this.props.entry.getIn(['data', 'videos']) || [];
+        return h('div', {className: 'dv-preview'},
+          h('div', {className: 'port-grid'},
+            videos.map(function(v, i) {
+              var vid = v.get('youtubeId') || '';
+              return h('div', {className: 'port-item', key: i},
+                h('img', {src: 'https://img.youtube.com/vi/' + vid + '/hqdefault.jpg'}),
+                h('span', {className: 'cat'}, v.get('category'))
+              );
+            }).toArray()
+          )
+        );
+      }
+    });
+    CMS.registerPreviewTemplate('portfolio', PortfolioPreview);
+
+    var ContactPreview = createClass({
+      render: function() {
+        var e = this.props.entry.get('data');
+        return h('div', {className: 'dv-preview'},
+          h('ul', {className: 'contact-meta'},
+            h('li', null, h('span', null, 'Email'), h('span', null, e.get('email'))),
+            h('li', null, h('span', null, 'Instagram'), h('span', null, '@' + e.get('instagram'))),
+            h('li', null, h('span', null, 'Based in'), h('span', null, e.get('basedIn'))),
+            h('li', null, h('span', null, 'Coverage'), h('span', null, e.get('coverage')))
+          )
+        );
+      }
+    });
+    CMS.registerPreviewTemplate('contact', ContactPreview);
+  </script>
 </body>
 </html>
