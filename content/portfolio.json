@@ -1,10 +1,28 @@
 {
   "videos": [
-    {"youtubeId":"AEbo9BBdgG4","category":"Competition Coverage"},
-    {"youtubeId":"HBwxRHAzJOk","category":"Competition Coverage"},
-    {"youtubeId":"Fp0Wln8JrJo","category":"Brand Promo"},
-    {"youtubeId":"IeMipn42xO0","category":"Fitness Content"},
-    {"youtubeId":"Mwh1tDE2ETc","category":"FPV Reel"},
-    {"youtubeId":"bpLa2tmPOck","category":"Social Content"}
+    {
+      "youtubeId": "AEbo9BBdgG4",
+      "category": "Hyrox Promo"
+    },
+    {
+      "youtubeId": "HBwxRHAzJOk",
+      "category": "Metrix Fitness Promo"
+    },
+    {
+      "youtubeId": "Fp0Wln8JrJo",
+      "category": "Restaurant Promo"
+    },
+    {
+      "youtubeId": "IeMipn42xO0",
+      "category": "Bunker Fitness Promo"
+    },
+    {
+      "youtubeId": "Mwh1tDE2ETc",
+      "category": "FPV Promo"
+    },
+    {
+      "youtubeId": "bpLa2tmPOck",
+      "category": "Fighter Promo"
+    }
   ]
 }
