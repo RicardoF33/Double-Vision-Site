@@ -62,7 +62,9 @@ collections:
             name: "videos"
             widget: "list"
             fields:
-              - {label: "YouTube Video ID", name: "youtubeId", widget: "string", hint: "The code after /shorts/ or /watch?v= in the video's URL"}
+              - {label: "YouTube Video ID", name: "youtubeId", widget: "string", required: false, hint: "Leave blank if uploading a video file below instead"}
+              - {label: "OR: Upload Video File", name: "videoFile", widget: "file", required: false, hint: "MP4, keep under ~50MB. Only used if YouTube Video ID above is left blank"}
+              - {label: "Thumbnail Image (required if uploading a video file)", name: "posterImage", widget: "image", required: false}
               - {label: "Category Label", name: "category", widget: "string"}
 
   - name: "contact"
