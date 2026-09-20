@@ -1,0 +1,7 @@
+{
+  "packages": [
+    {"name":"Starter","price":"£1,000","videography":"4 reels","photography":"1 carousel","shootDays":"1 day (~3 hrs)","contentCall":"Monthly","revisions":"1 round"},
+    {"name":"Growth","price":"£1,500","videography":"6 reels","photography":"2 carousels","shootDays":"1 day (half-day)","contentCall":"Monthly","revisions":"2 rounds"},
+    {"name":"Premium","price":"£2,000","videography":"8 reels","photography":"2 carousels","shootDays":"Up to 2 days","contentCall":"Monthly","revisions":"2 rounds"}
+  ]
+}

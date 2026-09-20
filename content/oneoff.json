@@ -1,0 +1,9 @@
+{
+  "services": [
+    {"name":"Bespoke Business Promo Video","note":"One-off project, photography included","price":"£400 min"},
+    {"name":"Fitness Competition Filming","note":"Event-day coverage, scope dependent","price":"£400 min"},
+    {"name":"Hourly Filming","note":"Booked by the hour, any location","price":"£75 / hr"},
+    {"name":"Hourly Editing","note":"Client-supplied footage — business or content production only","price":"£50 / hr"},
+    {"name":"FPV Fly-Through","note":"Portfolio launching soon — enquire to discuss","price":"POA"}
+  ]
+}
