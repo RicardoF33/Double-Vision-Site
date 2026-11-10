@@ -26,6 +26,11 @@
     {
       "youtubeId": "bpLa2tmPOck",
       "category": "Fighter Promo"
+    },
+    {
+      "videoFile": "/images/cloud-9-promo-web.mp4",
+      "posterImage": "/images/cloud-9-promo-thumbnail-web.jpg",
+      "category": "Cloud 9 Store Opening"
     }
   ]
 }
