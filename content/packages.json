@@ -1,8 +1,8 @@
 {
   "packages": [
     {
-      "name": "Starter",
-      "price": "£1,000",
+      "name": "Growth",
+      "price": "£800",
       "videography": "4 short form reels",
       "photography": "1 carousel",
       "shootDays": "3 hour shoot",
@@ -10,8 +10,8 @@
       "revisions": "1 round"
     },
     {
-      "name": "Growth",
-      "price": "£1,500",
+      "name": "Elevate",
+      "price": "£1000",
       "videography": "6 short form reels",
       "photography": "2 carousels",
       "shootDays": "6 hour shoot",
@@ -19,8 +19,8 @@
       "revisions": "2 rounds"
     },
     {
-      "name": "Premium",
-      "price": "£2,000",
+      "name": "Accelerator",
+      "price": "£1300",
       "videography": "8 short form reels",
       "photography": "2 carousels",
       "shootDays": "8 hour shoot",
