@@ -1,6 +1,11 @@
 {
   "videos": [
     {
+      "videoFile": "/images/cloud-9-promo-web.mp4",
+      "posterImage": "/images/cloud-9-promo-thumbnail-web.jpg",
+      "category": "Cloud 9 Store Opening"
+    },
+    {
       "videoFile": "/images/Metrix low storage.mp4",
       "posterImage": "/images/img_2773.png",
       "category": "Metrix Promo"
@@ -26,11 +31,6 @@
     {
       "youtubeId": "bpLa2tmPOck",
       "category": "Fighter Promo"
-    },
-    {
-      "videoFile": "/images/cloud-9-promo-web.mp4",
-      "posterImage": "/images/cloud-9-promo-thumbnail-web.jpg",
-      "category": "Cloud 9 Store Opening"
     }
   ]
 }
